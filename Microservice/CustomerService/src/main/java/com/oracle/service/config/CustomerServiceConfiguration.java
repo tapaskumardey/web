@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
+import org.springframework.web.client.RestTemplate;
 
 @Configuration
 @ComponentScan
@@ -22,4 +23,11 @@ public class CustomerServiceConfiguration {
 				.addScript("classpath:testdb/data.sql").build();
 		return dataSource;
 	}
+
+	@Bean
+	public RestTemplate restTemplate() {
+		RestTemplate restTemplate = new RestTemplate();
+		return restTemplate;
+	}
+
 }
