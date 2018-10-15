@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hello CORS</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="service.js"></script>
+		<style http-equiv="Content-Type">
+body {
+    font-family: "Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+p, h1, form, button {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+select {
+    font-size: 12px;
+    padding: 4px 2px;
+    border: solid 1px #aacfe4;
+    width: 200px;
+    margin: 2px 0 20px 10px;
+}
+label {
+    font-weight:bold;
+}
+.details{
+background: #ebf4fb;
+padding:10px;
+}
+.details label {
+    display:inline-block;
+    width: 200px;
+	font-weight:bold;
+	
+}
+.centerDiv{
+	margin: auto;
+    width: 50%;
+    border: 1px solid #aacfe4;
+    padding: 10px;
+}
+</style>
+    </head>
+
+    <body>
+        <div class="centerDiv">
+			
+            <p> 
+				<label for="order" >Select order to see details: </label>
+				<select id="orderIDs" name="orderIDs" onchange="changeOrderID()">
+					<option value="">Select</option>
+				</select>
+			</p>
+            <div id="custDetails" class="details">
+				<p>
+					<output id="id1" name="id1" style="font-weight:bold;font-size:15px;">Order Details</output>
+				</p>
+				<hr></hr>
+				<p>
+					<label for="orderID" >Order ID: </label>
+					<output id="orderID" name="orderID">-</output>
+				</p>
+				<p>
+					<label for="totalPrice">Total Price: </label>
+					<output id="totalPrice" name="totalPrice">-</output>
+				</p>
+				<p>
+					<label for="firstName">Customer Name: </label>
+					<output id="firstName" name="firstName">-</output>
+				</p>
+				<p>
+					<label for="phoneNumber">Customer Contact Number: </label>
+					<output id="phoneNumber" name="phoneNumber">-</output>
+				</p>
+				<p>
+					<label for="address">Customer Address: </label>
+					<output id="address" name="address">-</output>
+				</p>
+			</div>
+        </div>
+    </body>
+</html>
