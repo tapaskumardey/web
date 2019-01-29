@@ -3,10 +3,142 @@
   <head>
     <title>App Engine Demo</title>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	
+<link href="css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="js/bootstrap.min.js"></script>
+<script>
+$(document).ready(function(){
+    $(".dropdown").hover(            
+        function() {
+            $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true,true).slideDown("400");
+            $(this).toggleClass('open');        
+        },
+        function() {
+            $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true,true).slideUp("400");
+            $(this).toggleClass('open');       
+        }
+    );
+});
+</script>
+<style type="text/css">
+body {
+    background-color: #f7f7f7;
+}
+.CBKBackgroundColor{background-color: #FFF;}
+
+.headerTop {
+    position: relative;
+    display: block;
+    height: 155px;
+}
+.rightSeperator{margin-right: 5px;}	
+
+footer, section {
+    margin-top: 5px;
+   
+}
+
+.languageSection {
+    margin: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    border-top: none;
+    background-color: transparent;
+}
+.logoSection {
+    display: inline-block;
+    max-width: 355px;
+    height: auto;
+    margin-top: 25px;
+    text-align: center;
+    width: 100%;
+    float: left;
+}
+
+</style>
   </head>
   <body>
-    <div id="result">Loading...</div>
-
+  
+    
+<div id="wrapper">
+	<header id="header">
+		<div class="container CBKBackgroundColor">
+			<div class="headerTop">
+				<div class="languageSection">
+					English
+				</div>
+				<div class="logoSection">
+					<img src="images/logo.png" alt="We are stronger together with the euro">
+				</div>
+			</div>
+			<div class="headerBottom">
+				<nav class="navbar navbar-inverse">
+					<div class="navbar-header">
+						<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".js-navbar-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="#">My Store</a>
+					</div>
+					
+					<div class="collapse navbar-collapse js-navbar-collapse">
+						<ul class="nav navbar-nav">
+							<li><a href="#">Store locator</a></li>
+							<li class="dropdown">
+						  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Test1<span class="caret"></span></a>
+						  <ul class="dropdown-menu" role="menu">
+							<li><a href="#">Action</a></li>
+							<li><a href="#">Another action</a></li>
+							<li><a href="#">Something else here</a></li>
+							<li class="divider"></li>
+							<li><a href="#">Separated link</a></li>
+						  </ul>
+						</li>
+						</ul>
+						<ul class="nav navbar-nav navbar-right">
+						<li class="dropdown">
+						  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">My account <span class="caret"></span></a>
+						  <ul class="dropdown-menu" role="menu">
+							<li><a href="#">Action</a></li>
+							<li><a href="#">Another action</a></li>
+							<li><a href="#">Something else here</a></li>
+							<li class="divider"></li>
+							<li><a href="#">Separated link</a></li>
+						  </ul>
+						</li>
+						<li><a href="#">My cart (0) items</a></li>
+					  </ul>
+					</div><!-- /.nav-collapse -->
+				  </nav>
+			</div>
+		</div>
+	</header>
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-3  CBKBackgroundColor">
+					Ei eos suavitate forensibus mnesarchum. Eu est timeam vocibus, an nostro aliquam adipiscing quo. 
+				</div>
+				<div class="col-sm-9  CBKBackgroundColor">
+					Ei eos suavitate forensibus mnesarchum. Eu est timeam vocibus, an nostro aliquam adipiscing quo. 
+				</div>
+			</div>
+		</div>
+	</section>
+	<footer>
+		<div class="container CBKBackgroundColor">
+			<div class="footerTop">
+				Footer 1
+			</div>
+			<div class="footerBottom">
+				Footer 2 <div id="result">Loading...</div>
+			</div>
+		</div>
+	</footer>
+</div>
     <script>
 $(document).ready(function() {
   $.getJSON('/demo', function(data) {
